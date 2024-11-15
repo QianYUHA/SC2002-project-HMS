@@ -1,0 +1,2 @@
+package InventoryManagement;
+// MAKE THIS AN INTERFACE IF YOU WANT OR CAN REMOVE ALSO 
