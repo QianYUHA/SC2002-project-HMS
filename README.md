@@ -4,6 +4,18 @@ Welcome to the **Hospital Management System (HMS)**, a project designed to manag
 
 ---
 
+## 📋 Team Members
+
+| **NAME**          | **MATRICULATION NUMBER**|**STUDENT NUMBER**|
+|-------------------|-------------------------|------------------|
+| Kumar Advaith     | U2323503B               | 14               |
+| Lam Wai Jun       | U2321478F               | 15               |
+| Shu Xuanyu        | U2320246L               | 25               |
+| Singh Gunraj      | U2323772B               | 26               |
+| Tan Zhi Xin       | U2321371F               | 27               |
+
+---
+
 ## 📦 Project Features
 
 ### 👥 **User Roles**
