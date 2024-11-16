@@ -23,13 +23,74 @@ Welcome to the **Hospital Management System (HMS)**, a project designed to manag
 - **Doctor**: Manage appointments and patient medical records.
 - **Pharmacist**: Handle prescriptions and notify about inventory shortages.
 - **Receptionist**: Manage patient registrations, appointments, and billing.
-- **Patient**: View appointments and medical history.
+- **Patient**: Schedule and View appointments and medical history.
 
-### 📋 **Core Functionalities**
+---
+
+## ✨ Key Features
+
+### 📝 1. Patient Registration
+- Patients can register with essential details such as:
+  - Name, date of birth, gender, blood type, email, and contact number.
+- Patients create a unique user ID (validated to ensure no duplicates).
+- Patients can set their own passwords and change them later.
+
+---
+
+### 👨‍⚕️ 2. Staff Registration (Doctors, Pharmacists, Receptionists)
+- The Administrator can register (add) new staff members.
+- Each staff member is assigned a default, non-changeable Staff ID.
+- Staff can change their default passwords after login.
+
+---
+
+### 📅 3. Appointment Management
+- **Schedule Management**:
+  - Doctors can set unavailability for specific time slots and view their personal schedules with upcoming appointments for a selected date.
+  - Patients can view available slots for scheduling appointments with a specific doctor on a selected date.
+- **Booking and Rescheduling**:
+  - Patients can schedule, reschedule, or cancel appointments.
+  - Doctors can confirm, decline, or view upcoming appointments.
+- **Restrictions**:
+  - Appointments cannot be scheduled in the past.
+
+---
+
+### 🩺 4. Medical Records Management
+- **Patient Medical Records**:
+  - Doctors can add, view, and update patients’ medical records, including:
+    - Diagnosis
+    - Treatment plan
+- **Appointment Outcomes**:
+  - Doctors can record outcomes of appointments, including:
+    - Service Type (e.g., Blood Test)
+    - Consultation Notes (e.g., Pale Skin)
+    - Prescribed Medications, Quantity, and Medication Status.
+  - Doctors can later update medical records with updated diagnosis and treatment plans, for example:
+    - **Diagnosis**: Low Haemoglobin
+    - **Treatment Plan**: Medication (e.g., iron supplements).
+
+---
+
+### 💊 5. Inventory and Replenishment Management
+- **Medicine Inventory**:
+  - Administrators can view, add, update, or remove medicines from the inventory.
+  - Prescribed Medicines that are not in the inventory, can be added **implicitly** (via replenishment requests) 
+- **Low Stock Alerts**:
+  - When Pharmacist tries to dispense medicines, the system alerts them when stock levels fall below the threshold.
+  - Pharmacists can then send replenishment requests to the administrator for that medicine. 
+- **Replenishment Requests**:
+  - Pharmacists can submit requests for medicines that are out of stock or low in quantity.
+  - Administrators can approve or decline replenishment requests and update the inventory accordingly.
+
+---
+
+## 📋 **Core Functionalities**
 - **Dynamic Inventory Management**: Add or replenish medicines on demand.
 - **Flexible Appointment Booking**: Validate and schedule appointments seamlessly.
 - **Billing System**: Generate detailed bills for patients.
 - **Medical Records Management**: Maintain a comprehensive history of patient treatments.
+- **User Login**: Each user is authenticated through secure login. All staff members and patients can change their passwords. 
 
 ---
 
