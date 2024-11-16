@@ -1,4 +1,0 @@
-123,P123,Patient,Gunraj,2005-09-26,M,g@gmail.com,9871524585,O+
-1234,1234,Patient,Bob,2005-09-26,M,g@gmail.com,9871524585,O+
-12345,P12345,Patient,Harry,2005-09-26,M,g@gmail.com,9871524585,O+
-5,advaith123,Patient,jan,1000-01-01,M,advaith@gmaill.ckmo,999999999,A+
