@@ -1,3 +1,0 @@
-A1731689221312,123,D002,2024-11-23,11:00,Completed,blood test,as,,0,prescribed
-A1731689703273,123,D002,2024-11-30,11:00,Confirmed
-A1731733760399,412,D003,2024-11-16,15:00,Completed,x-ray,upper respiratory disease,cisplatin,10,completed
