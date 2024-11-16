@@ -4,7 +4,7 @@ Welcome to the **Hospital Management System (HMS)**, a project designed to manag
 
 ---
 # Link
-[Documentation](https://qianyuha.github.io/SC2002-project-HMS/)
+[JavaDoc](https://qianyuha.github.io/SC2002-project-HMS/)
 
 ## 📋 Team Members
 
