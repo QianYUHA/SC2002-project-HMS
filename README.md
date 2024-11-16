@@ -3,6 +3,8 @@
 Welcome to the **Hospital Management System (HMS)**, a project designed to manage the core operations of a hospital while adhering to **Object-Oriented Programming (OOP)** and **SOLID Design Principles**. This system includes modules for user management, inventory handling, appointment scheduling, billing, and medical records.
 
 ---
+# Link
+[Documentation](https://qianyuha.github.io/SC2002-project-HMS/)
 
 ## 📋 Team Members
 
