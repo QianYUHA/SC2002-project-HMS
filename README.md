@@ -109,21 +109,13 @@ Follow these steps to clone, compile, and run the project through the terminal:
 
 `cd SC2002-project-HMS`
 
-### 3️⃣ **Extract the src Folder on your Desktop or Downloads**
+### 3️⃣ **Compile the project:*
 
-`cp -r src ~/Desktop/`
+`javac hospital/mainapp/Main.java`
 
-### 4️⃣ **Navigate to the src Folder:**
+### 4️⃣ **Run the project:**
 
-`cd ~/Desktop/src`
-
-### 5️⃣ **Compile the project:**
-
-`javac MainApp/Main.java`
-
-### 6️⃣ **Run the project:**
-
-`java MainApp.Main`
+`java hospital/mainapp/Main.java`
 
 
 ### OTHER WAY (WITHOUT USING GITHUB)
