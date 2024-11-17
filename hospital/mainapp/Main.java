@@ -1,4 +1,4 @@
-package MainApp;
+package hospital.mainapp;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,15 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import AppointmentManagement.Appointment;
-import AppointmentManagement.AppointmentManager;
-import InventoryManagement.Inventory;
-import InventoryManagement.Pharmacist; 
-import UserManagment.Administrator;
-import UserManagment.Doctor;
-import UserManagment.Patient;
-import UserManagment.Reception;
-import UserManagment.User;
+import hospital.appointmentmanagement.*;
+import hospital.inventorymanagement.*;
+import hospital.usermanagment.*;
 
 /**
  * Main application class for the Hospital Management System (HMS).

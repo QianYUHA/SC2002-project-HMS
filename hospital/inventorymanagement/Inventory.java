@@ -1,5 +1,5 @@
 // Inventory.java
-package InventoryManagement;
+package hospital.inventorymanagement;
 
 import java.io.*;
 import java.util.ArrayList;

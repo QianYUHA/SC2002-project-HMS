@@ -1,4 +1,4 @@
-package AppointmentManagement;
+package hospital.appointmentmanagement;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

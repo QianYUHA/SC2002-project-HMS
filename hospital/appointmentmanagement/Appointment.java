@@ -1,4 +1,4 @@
-package AppointmentManagement;
+package hospital.appointmentmanagement;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

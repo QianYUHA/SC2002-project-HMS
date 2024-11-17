@@ -1,4 +1,4 @@
-package UserManagment;
+package hospital.usermanagment;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,11 +14,8 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import AppointmentManagement.Appointment;
-import AppointmentManagement.AppointmentManager;
-import AppointmentManagement.Invoice;
-import InventoryManagement.Billing;
-import InventoryManagement.Inventory;
+import hospital.appointmentmanagement.*;
+import hospital.inventorymanagement.*;
 /**
  * Represents a Receptionist in the hospital management system. 
  * Provides functionality for managing patient registration, 

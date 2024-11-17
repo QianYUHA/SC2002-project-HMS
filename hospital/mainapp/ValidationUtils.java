@@ -1,4 +1,4 @@
-package MainApp;
+package hospital.mainapp;
 /**
  * A utility class for validating common input formats such as email addresses
  * and contact numbers in the Hospital Management System.

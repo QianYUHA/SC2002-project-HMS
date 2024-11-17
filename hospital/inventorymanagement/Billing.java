@@ -1,6 +1,6 @@
-package InventoryManagement;
+package hospital.inventorymanagement;
 
-import AppointmentManagement.Invoice;
+import hospital.appointmentmanagement.*;
 
 /**
  * Handles billing operations, including calculating total bills and generating invoices for appointments.

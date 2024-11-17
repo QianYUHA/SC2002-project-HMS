@@ -1,4 +1,5 @@
-package UserManagment;
+package hospital.usermanagment;
+
 /**
  * Abstract class representing a staff member in the system.
  * Inherits from the `User` class and includes a staff-specific ID.

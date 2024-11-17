@@ -1,13 +1,12 @@
 // AppointmentManager.java
-package AppointmentManagement;
+package hospital.appointmentmanagement;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 
-import AppointmentManagement.TimeSlot.SlotStatus;
-import UserManagment.Doctor; 
+import hospital.usermanagment.*;
 
 /**
  * Manages all appointment-related operations including scheduling, updating, and retrieving appointments.

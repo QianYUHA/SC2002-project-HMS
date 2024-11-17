@@ -1,4 +1,4 @@
-package InventoryManagement;
+package hospital.inventorymanagement;
 
 /**
  * Represents a medicine in the inventory, including details such as ID, name, stock, threshold, and price.

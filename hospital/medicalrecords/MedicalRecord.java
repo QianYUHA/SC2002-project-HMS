@@ -1,11 +1,10 @@
-package MedicalRecords;
+package hospital.medicalrecords;
 
 import java.io.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import UserManagment.Patient;
+import hospital.usermanagment.Patient;
 
 /**
  * Represents the medical records of a patient.

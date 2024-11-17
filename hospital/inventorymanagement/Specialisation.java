@@ -1,4 +1,4 @@
-package InventoryManagement;
+package hospital.inventorymanagement;
 
 /**
  * Represents various specializations for medical staff and doctors.

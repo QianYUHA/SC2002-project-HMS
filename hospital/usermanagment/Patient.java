@@ -1,13 +1,13 @@
-package UserManagment;
+package hospital.usermanagment;
+
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import AppointmentManagement.Appointment;
-import AppointmentManagement.AppointmentManager;
-import MedicalRecords.MedicalRecord;
+import hospital.appointmentmanagement.*;
+import hospital.medicalrecords.*;
 
 /**
  * Represents a patient in the hospital management system.

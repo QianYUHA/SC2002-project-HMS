@@ -1,4 +1,4 @@
-package AppointmentManagement;
+package hospital.appointmentmanagement;
 
 import java.util.ArrayList;
 import java.util.List;

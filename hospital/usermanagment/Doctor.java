@@ -1,22 +1,20 @@
-package UserManagment;
+package hospital.usermanagment;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
+import java.io.IOException; // Added import
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeParseException; // Added import
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import AppointmentManagement.Appointment;
-import AppointmentManagement.AppointmentManager;
-import AppointmentManagement.TimeSlot;
-import AppointmentManagement.TimeSlot.SlotStatus;
-import MedicalRecords.MedicalRecord;
+import hospital.appointmentmanagement.Appointment;
+import hospital.appointmentmanagement.AppointmentManager;
+import hospital.appointmentmanagement.TimeSlot;
 
 /**
  * Represents a Doctor user with capabilities to manage appointments and patient records.
@@ -123,7 +121,7 @@ public class Doctor extends Staff {
         if (availableTimeSlots != null && !availableTimeSlots.isEmpty()) {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("unavailable_slots.txt", true))) {
                 for (TimeSlot slot : availableTimeSlots) {
-                    if (slot.getStatus() == SlotStatus.UNAVAILABLE) {
+                    if (slot.getStatus() == TimeSlot.SlotStatus.UNAVAILABLE) {
                         writer.write(this.getDoctorID() + "," + slot.getDate() + "," + slot.getStartTime() + ",UNAVAILABLE");
                         writer.newLine();
                     }
@@ -152,7 +150,7 @@ public class Doctor extends Staff {
                     LocalTime startTime = LocalTime.parse(details[2]);
                     for (TimeSlot slot : availableTimeSlots) {
                         if (slot.getDate().equals(date) && slot.getStartTime().equals(startTime)) {
-                            slot.setStatus(SlotStatus.UNAVAILABLE);
+                            slot.setStatus(TimeSlot.SlotStatus.UNAVAILABLE);
                         }
                     }
                 }
@@ -279,7 +277,7 @@ public class Doctor extends Staff {
         System.out.println("====================================================");
     
         for (TimeSlot slot : availableTimeSlots) {
-            if (slot.getStatus() == SlotStatus.AVAILABLE) {
+            if (slot.getStatus() == TimeSlot.SlotStatus.AVAILABLE) {
                 System.out.printf("| %-10s | %-10s | %-8s | %-12s |%n", 
                                   slot.getDate(), 
                                   slot.getStartTime(), 

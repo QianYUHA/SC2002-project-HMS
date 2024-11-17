@@ -1,4 +1,5 @@
-package UserManagment;
+package hospital.usermanagment;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,9 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import AppointmentManagement.AppointmentManager;
-import InventoryManagement.Inventory;
-import InventoryManagement.Pharmacist;
+import hospital.appointmentmanagement.*;
+import hospital.inventorymanagement.*;
 
 /**
  * Represents a generic user in the system. This is an abstract class

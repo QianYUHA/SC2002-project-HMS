@@ -1,4 +1,4 @@
-package UserManagment;
+package hospital.usermanagment;
 /**
  * Interface defining essential methods for user management.
  */
