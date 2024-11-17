@@ -3,6 +3,7 @@
 Welcome to the **Hospital Management System (HMS)**, a project designed to manage the core operations of a hospital while adhering to **Object-Oriented Programming (OOP)** and **SOLID Design Principles**. This system includes modules for user management, inventory handling, appointment scheduling, billing, and medical records.
 
 ---
+
 # Link
 [JavaDoc](https://qianyuha.github.io/SC2002-project-HMS/)
 
@@ -77,7 +78,7 @@ Welcome to the **Hospital Management System (HMS)**, a project designed to manag
 ### 💊 5. Inventory and Replenishment Management
 - **Medicine Inventory**:
   - Administrators can view, add, update, or remove medicines from the inventory.
-  - Prescribed Medicines that are not in the inventory, can be added **implicitly** (via replenishment requests) 
+  - Prescribed Medicines that are not in the inventory, can be added **implicitly** (via replenishment requests).
 - **Low Stock Alerts**:
   - When Pharmacist tries to dispense medicines, the system alerts them when stock levels fall below the threshold.
   - Pharmacists can then send replenishment requests to the administrator for that medicine. 
@@ -98,17 +99,12 @@ Welcome to the **Hospital Management System (HMS)**, a project designed to manag
 
 ## 🛠️ Setup Instructions
 
-## 🚀 Setup Instructions
-
 Follow these steps to clone, compile, and run the project through the terminal:
 
 ### 1️⃣ **Clone the Repository**
 Clone the project repository from GitHub:
-```bash
 
-
-
-
+`git clone https://github.com/QianYUHA/SC2002-project-HMS.git`
 
 ### 1️⃣ **Unpack the Project**
 Download and unzip the project package. Ensure the following essential files are available in the project directory:
