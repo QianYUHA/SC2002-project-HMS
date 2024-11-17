@@ -98,6 +98,17 @@ Welcome to the **Hospital Management System (HMS)**, a project designed to manag
 
 ## 🛠️ Setup Instructions
 
+## 🚀 Setup Instructions
+
+Follow these steps to clone, compile, and run the project through the terminal:
+
+### 1️⃣ **Clone the Repository**
+Clone the project repository from GitHub:
+```bash
+
+
+
+
 ### 1️⃣ **Unpack the Project**
 Download and unzip the project package. Ensure the following essential files are available in the project directory:
 - `staff.txt`
