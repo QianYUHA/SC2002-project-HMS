@@ -109,6 +109,7 @@ Clone the project repository from GitHub:
 
 
 
+
 ### 1️⃣ **Unpack the Project**
 Download and unzip the project package. Ensure the following essential files are available in the project directory:
 - `staff.txt`
