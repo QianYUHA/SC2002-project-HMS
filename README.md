@@ -167,7 +167,4 @@ Launch the main file (e.g., `Main.java`) to initialize the system. This will loa
 ---
 
 
-## 📜 License
-This project is developed as part of the **SC2002 Object-Oriented Design & Programming** module at **Nanyang Technological University (NTU)** and is intended for educational purposes only.
-
----
+## THANK YOU
