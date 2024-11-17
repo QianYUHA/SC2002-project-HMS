@@ -106,6 +106,23 @@ Clone the project repository from GitHub:
 
 `git clone https://github.com/QianYUHA/SC2002-project-HMS.git`
 
+### 2️⃣ **Pre-Populated Data**
+Navigate to the Repository:
+
+`cd "SC2002-project-HMS"`
+
+### 3️⃣ **Administrator Login**
+Compile the Project:
+
+`javac -cp src -d bin src/MainApp.Main.java`
+
+### 4️⃣ **Run the Program**
+Run the Project:
+
+`java -cp bin MainApp.Main`
+
+### OTHER WAY (WITHOUT USING GITHUB)
+
 ### 1️⃣ **Unpack the Project**
 Download and unzip the project package. Ensure the following essential files are available in the project directory:
 - `staff.txt`
