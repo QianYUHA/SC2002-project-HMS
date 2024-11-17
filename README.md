@@ -108,11 +108,11 @@ Clone the project repository from GitHub:
 
 ### 2️⃣ **Navigate to the Repository:**
 
-`cd "SC2002-project-HMS"`
+`cd SC2002-project-HMS`
 
 ### 3️⃣ **Compile the Project:**
 
-`javac -cp src -d bin src/MainApp.Main.java`
+`javac -d bin src/MainApp/Main.java`
 
 ### 4️⃣ **Run the Project:**
 
