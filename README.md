@@ -101,8 +101,7 @@ Welcome to the **Hospital Management System (HMS)**, a project designed to manag
 
 Follow these steps to clone, compile, and run the project through the terminal:
 
-### 1️⃣ **Clone the Repository**
-Clone the project repository from GitHub:
+### 1️⃣ **Clone the Project Repository from GitHub**
 
 `git clone https://github.com/QianYUHA/SC2002-project-HMS.git`
 
@@ -110,13 +109,21 @@ Clone the project repository from GitHub:
 
 `cd SC2002-project-HMS`
 
-### 3️⃣ **Compile the Project:**
+### 3️⃣ **Extract the src Folder on your Desktop or Downloads**
 
-`javac -d bin src/MainApp/Main.java`
+`cp -r src ~/Desktop/`
 
-### 4️⃣ **Run the Project:**
+### 4️⃣ **Navigtae to the src Folder:**
 
-`java -cp bin MainApp.Main`
+`cd ~/Desktop/src`
+
+### 5️⃣ **Compile the project:**
+
+`javac MainApp/Main.java`
+
+### 6️⃣ **Run the project:**
+
+`java MainApp.Main`
 
 
 ### OTHER WAY (WITHOUT USING GITHUB)
