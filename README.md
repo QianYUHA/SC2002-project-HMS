@@ -113,7 +113,7 @@ Follow these steps to clone, compile, and run the project through the terminal:
 
 `cp -r src ~/Desktop/`
 
-### 4️⃣ **Navigtae to the src Folder:**
+### 4️⃣ **Navigate to the src Folder:**
 
 `cd ~/Desktop/src`
 
