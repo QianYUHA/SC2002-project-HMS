@@ -1,12 +1,11 @@
 // AppointmentManager.java
 package hospital.appointmentmanagement;
 
+import hospital.usermanagment.*;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
-
-import hospital.usermanagment.*;
 
 /**
  * Manages all appointment-related operations including scheduling, updating, and retrieving appointments.
@@ -421,6 +420,24 @@ public class AppointmentManager {
                     (appt.getStatus().equalsIgnoreCase("Scheduled") || appt.getStatus().equalsIgnoreCase("Confirmed"))) {
                 return false; // Slot is already booked
             }
+        }
+        // Check the unavailable.txt file
+        try (BufferedReader reader = new BufferedReader(new FileReader("unavailable.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(","); // Assuming the file format is doctorID,date,time
+                if (parts.length == 3) {
+                    String fileDoctorID = parts[0].trim();
+                    LocalDate fileDate = LocalDate.parse(parts[1].trim()); // Ensure correct date format in file
+                    LocalTime fileTime = LocalTime.parse(parts[2].trim()); // Ensure correct time format in file
+
+                    if (fileDoctorID.equalsIgnoreCase(doctorID) && fileDate.equals(date) && fileTime.equals(time)) {
+                        return false; // Slot is unavailable
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading unavailable slots: " + e.getMessage());
         }
         return true; // Slot is available
     }
