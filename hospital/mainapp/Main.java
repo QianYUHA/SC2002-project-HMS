@@ -1,5 +1,8 @@
 package hospital.mainapp;
 
+import hospital.appointmentmanagement.*;
+import hospital.inventorymanagement.*;
+import hospital.usermanagment.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,10 +12,6 @@ import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
-import hospital.appointmentmanagement.*;
-import hospital.inventorymanagement.*;
-import hospital.usermanagment.*;
 
 /**
  * Main application class for the Hospital Management System (HMS).
@@ -853,8 +852,8 @@ public class Main {
                             }
                         }
                         // Check lunch time
-                        if (newTime.isAfter(LocalTime.of(11, 59)) && newTime.isBefore(LocalTime.of(14, 0))) {
-                            System.out.println("Cannot reschedule appointments during lunch time (12:00 - 14:00).");
+                        if (newTime.isAfter(LocalTime.of(12, 59)) && newTime.isBefore(LocalTime.of(14, 0))) {
+                            System.out.println("Cannot reschedule appointments during lunch time (13:00 - 14:00).");
                         } else {
                             appointment.rescheduleAppointment(newDate, newTime);
                         }
@@ -956,7 +955,12 @@ public class Main {
             case 4:
                 System.out.print("Enter the name of the medicine to request replenishment: ");
                 String medicineName = scanner.nextLine();
-                pharmacist.sendReplenishmentRequest(medicineName);
+                if (!medicineName.matches("^[a-zA-Z ]+$")) {
+                    System.out.println("Invalid medicine name. Please enter only alphabetic characters.");
+                } else {
+                    pharmacist.sendReplenishmentRequest(medicineName);
+                    System.out.println("Replenishment request sent for " + medicineName + ".");
+                }
                 break;
             case 5:
                 System.out.print("Enter the name of the medicine for which you want to check the replenishment request status: ");

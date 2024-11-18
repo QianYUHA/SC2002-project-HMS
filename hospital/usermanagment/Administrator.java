@@ -1,5 +1,7 @@
 package hospital.usermanagment;
 
+import hospital.appointmentmanagement.*;
+import hospital.inventorymanagement.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,9 +13,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
-
-import hospital.appointmentmanagement.*;
-import hospital.inventorymanagement.*;
 
 /**
  * Represents an Administrator user with capabilities to manage staff and inventory.
@@ -170,10 +169,8 @@ public class Administrator extends User {
 
                         // Check if stock is actually below the threshold before approving
                         if (currentStock < threshold) {
-                            System.out.print("Enter the quantity to replenish for " + medicineName + ": ");
-                            int replenishAmount = 0;
+                            int replenishAmount = threshold*2;
                             try {
-                                replenishAmount = Integer.parseInt(scanner.nextLine());
                                 if (replenishAmount <= 0) {
                                     System.out.println("Invalid replenish amount. Skipping replenishment.");
                                     writer.write(medicineName + ",Rejected");

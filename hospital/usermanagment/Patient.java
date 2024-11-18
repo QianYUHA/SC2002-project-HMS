@@ -1,13 +1,12 @@
 package hospital.usermanagment;
 
+import hospital.appointmentmanagement.*;
+import hospital.medicalrecords.*;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import hospital.appointmentmanagement.*;
-import hospital.medicalrecords.*;
 
 /**
  * Represents a patient in the hospital management system.
@@ -324,12 +323,28 @@ public class Patient extends User {
             case 1:
                 System.out.print("Enter new email: ");
                 String newEmail = scanner.nextLine();
-                updateContactInformation(newEmail, this.contactNumber);
+                
+                // Check if the email contains "@" using regex
+                if (!newEmail.matches("^[\\w.-]+@[\\w-]+\\.[\\w-]{2,4}$")) {
+                    System.out.println("Invalid Email. Please try again with an email containing '@'.");
+                    return;
+                } else {
+                    // Update the contact information if the email is valid
+                    updateContactInformation(newEmail, this.contactNumber);
+                    System.out.println("Email updated successfully.");
+                }
+            
                 break;
             case 2:
                 System.out.print("Enter new contact number: ");
                 String newContact = scanner.nextLine();
-                updateContactInformation(this.email, newContact);
+                if (!newContact.matches("\\d+")){
+                    System.out.println("Invalid contact number. Please enter digits only.");
+                    return;
+                }
+                else{
+                    updateContactInformation(this.email, newContact);
+                }
                 break;
             default:
                 System.out.println("Invalid choice. Please try again.");

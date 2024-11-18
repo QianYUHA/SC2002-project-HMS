@@ -1,14 +1,15 @@
 package hospital.inventorymanagement;
 
+import hospital.appointmentmanagement.*;
+import hospital.usermanagment.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-
-import hospital.appointmentmanagement.*;
-import hospital.usermanagment.*;
 /**
  * Represents a Pharmacist who manages prescriptions, dispenses medicines,
  * handles inventory replenishment requests, and monitors stock levels.
@@ -79,6 +80,7 @@ public class Pharmacist extends Staff {
     public void dispenseMedicines(int patientID, AppointmentManager appointmentManager) {
         List<Appointment> appointments = appointmentManager.getAppointmentsByPatientID(patientID);
         boolean canDispense = true;
+        boolean exist = false;
         Medicine lowStockMedicine = null;
 
         // Check stock for each prescribed medicine
@@ -87,6 +89,7 @@ public class Pharmacist extends Staff {
                     "prescribed".equalsIgnoreCase(appointment.getPrescribedMedicineStatus())) {
                 List<String> medicines = appointment.getPrescribedMedicines();
                 List<Integer> quantities = appointment.getPrescribedMedicineQuantities();
+                exist = true;
 
                 for (int i = 0; i < medicines.size(); i++) {
                     String medicineName = medicines.get(i);
@@ -113,13 +116,17 @@ public class Pharmacist extends Staff {
                     }
                 }
             }
+            else{
+                System.out.println("Nothing to dispense for " + appointment.getAppointmentID());
+                break;
+            }
             if (!canDispense) {
                 break; // Exit if any medicine has insufficient stock or is missing
             }
         }
 
         // Dispense medicines if all stocks are sufficient
-        if (canDispense) {
+        if (canDispense && exist) {
             for (Appointment appointment : appointments) {
                 if (appointment.getStatus().equalsIgnoreCase("Completed") &&
                         "prescribed".equalsIgnoreCase(appointment.getPrescribedMedicineStatus())) {
@@ -143,9 +150,7 @@ public class Pharmacist extends Staff {
                 }
             }
             System.out.println("Medicines dispensed and inventory updated successfully.");
-        } else if (lowStockMedicine != null) {
-            System.out.println("Can't dispense medicines. LOW STOCK for " + lowStockMedicine.getName());
-        }
+        } 
     }
 
     /**
@@ -154,19 +159,46 @@ public class Pharmacist extends Staff {
      * @param medicineName The name of the medicine to replenish.
      */
     public void sendReplenishmentRequest(String medicineName) {
-        if (inventory.medicineExists(medicineName)) {
-            System.out.println("Medicine already exists in inventory. No need to replenish.");
-            return;
+        try {
+            // Read the current contents of the file
+            List<String> lines = new ArrayList<>();
+            boolean medicineExists = false;
+
+            File file = new File(REPLENISHMENT_REQUEST_FILE);
+            if (file.exists()) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        String[] parts = line.split(",", 2); // Split the line into medicine name and status
+                        if (parts[0].equalsIgnoreCase(medicineName)) {
+                            // Overwrite the status to "Pending" for the existing entry
+                            lines.add(medicineName + ",Pending");
+                            medicineExists = true;
+                        } else {
+                            lines.add(line); // Keep other lines as is
+                        }
+                    }
+                }
+            }
+
+            // If the medicine does not exist, add it as a new entry
+            if (!medicineExists) {
+                lines.add(medicineName + ",Pending");
+            }
+
+            // Write the updated content back to the file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(REPLENISHMENT_REQUEST_FILE))) {
+                for (String line : lines) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            }
+
+            //System.out.println("Replenishment request for " + medicineName + " processed successfully.");
+        } catch (IOException e) {
+            System.out.println("Error processing replenishment request: " + e.getMessage());
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(REPLENISHMENT_REQUEST_FILE, true))) {
-            // Append the new replenishment request
-            writer.write(medicineName + ",Pending");
-            writer.newLine();
-            System.out.println("Replenishment request for " + medicineName + " added to file.");
-        } catch (IOException e) {
-            System.out.println("Error writing replenishment request to file: " + e.getMessage());
-        }
     }
 
     /**
